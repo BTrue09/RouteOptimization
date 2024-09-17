@@ -1,0 +1,60 @@
+Brayden Truex
+
+The idea is to create an algorithm that can determine the best order to load trucks
+It would also ideally give advice on what pickers should be on what truck in order to
+do it in the quickest way and so that people are not getting ahead of the pallet in front
+of them.
+
+This may result in a large differentiation in the picked cases across pickers, but
+I believe that it will result in a quicker load time and lead to faster completion of work
+
+Say the fastest 3 pickers load the two longest trucks in the same amount of time the next
+3 fastest pickers load the next 2 longest trucks and so on. 
+Then the order to bring up the trucks is all that has to be determined and to manually place
+certain pickers on those trucks is what has to be done
+
+-First need to learn how trucks are determined to load and how a route is determined to go
+on a certain truck
+    -Will need to talk to Dylan about how to determine what truck goes with what route
+    -Will need to talk to boss Dylan about how the system works and how to gain access
+        to the information
+    -How do they know this truck needs to be this length, and then if it is based solely
+        on number of pallets or cases, etc can that be used in correlation with the 
+        planned pick time. 
+        -If planned time is x and pickers on that truck have a DPS over 100 then that
+        truck will be loaded faster than the planned pick and be done 
+        -Those pickers can begin on other pickers trucks until a new truck is brought up
+        for them to pick for
+    -So maybe the 5 longest trucks aren't brought up to start, but rather the longest, then 
+    3rd longest, etc so that way the best pickers can load the 2 longest trucks in relatively
+    the same time as say the next couple. 
+    -Would have to experiment and determine the optimal way
+    -If it is all based on statistics and the avg previous couple days Cases/hour or DPS
+    then the amount of time a truck would take to can be determined and ALL trucks in a day
+    can be determined based off of who is picking on what truck.
+-Then need to have the information of the bulk cases for that truck and the planned pick time
+-The trucks with the higher pick times should have the best pickers and should be brought up
+first. 
+-Trucks with a lot of fulls should be brought up towards the end unless they have a high
+pick time. 
+-The beginning trucks that have a lower pick time should go to the slower pickers
+-New hires should get their own truck and it should be out of the way, ideally door 16 or 12
+-Determine the best pickers based on recent results of cases per hour
+-Each picker has stats associated already within an excel spreadsheet that is generated
+-Determine the best picker based off of Cases/Hour
+
+
+Ex:
+    Picker{
+        Name
+        Cases Picked
+        Cases/Hr
+    }
+
+    Truck{
+        Number
+        Pallets
+        Full Pallets
+        Bulk cases to pick
+        Planned route pick time
+    }
